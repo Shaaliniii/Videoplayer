@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Playback Application</title>
+</head>
+<body>
+    <div id="player"></div>
+
+    <script>
+       
+        const API_KEY = 'AIzaSyAxcSRoWn-O1sjD2cb2EEYUoFCe2XGxZzM';
+
+        const VIDEO_ID = '_HqrjLxKtKM';
+
+       
+        function loadYouTubeAPI() {
+            const tag = document.createElement('script');
+            tag.src = 'https://www.youtube.com/iframe_api';
+            const firstScriptTag = document.getElementsByTagName('script')[0];
+            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+        }
+
+        function onYouTubeIframeAPIReady() {
+            const player = new YT.Player('player', {
+                height: '360',
+                width: '800',
+                videoId: VIDEO_ID,
+                playerVars: {
+                    'autoplay': 1,
+                    'controls': 1,
+                    'showinfo': 0,
+                    'rel': 0,
+                    'modestbranding': 1
+                },
+                events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange
+                }
+            });
+        }
+
+        
+        function onPlayerReady(event) {
+           
+        }
+
+        
+        function onPlayerStateChange(event) {
+            
+        }
+
+        loadYouTubeAPI();
+    </script>
+</body>
+</html>
